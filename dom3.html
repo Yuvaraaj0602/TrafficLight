@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic signal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        background-color: aqua;
+    }
+    button{
+        margin: 10px;
+        border-radius: 10px;
+        background-color: gray;
+    }
+
+
+</style>
+<body>
+    <div class="container">
+    <h1 class="text-center">Traffic signal</h1>
+  <div class="row text-center">
+        <div class="col-6 d-flex flex-column justify-content-center">
+            <button id="red" onclick="stop()">Stop</button>
+            <button id="yellow" onclick="ready()">Ready</button>
+            <button id="green" onclick="go()">Go</button>
+    </div>
+    <div class="col-6 d-flex flex-column" style="background-color: darkgray ;width: 70px; border-radius: 20px;
+    border: 2px solid;">
+        <div>
+            <div id="cr" style="background-color: white; width: 20px; height: 20px; border-radius: 20px; border: 2px solid;margin: 10px;"></div>
+            <div id="cy" style="background-color: white; width: 20px; height: 20px; border-radius: 20px; border: 2px solid;margin: 30px 10px;"></div>
+            <div id="cg" style="background-color: white; width: 20px; height: 20px; border-radius: 20px; border: 2px solid;margin: 30px 10px;"></div>
+        </div>
+    </div>
+    </div>
+ </div>
+    
+
+<script>
+    let red=document.getElementById("cr")
+    let yellow=document.getElementById("cy")
+    let green=document.getElementById("cg")
+    let btred=document.getElementById("red")
+    let btyellow=document.getElementById("yellow")
+    let btgreen=document.getElementById("green")
+
+    function stop() {
+        red.style.backgroundColor="red";
+        btred.style.backgroundColor="red";
+        yellow.style.backgroundColor="white";
+        btyellow.style.backgroundColor="gray";
+        green.style.backgroundColor="white"
+        btgreen.style.backgroundColor="gray"
+    }
+    function ready() {
+        yellow.style.backgroundColor="yellow";
+        btyellow.style.backgroundColor="yellow";
+        red.style.backgroundColor="white";
+        btred.style.backgroundColor="gray" 
+        green.style.backgroundColor="white"
+        btgreen.style.backgroundColor="gray"
+    
+    }
+    function go() {
+        green.style.backgroundColor="green"
+        btgreen.style.backgroundColor="green"
+        red.style.backgroundColor="white";
+        btred.style.backgroundColor="gray";
+        yellow.style.backgroundColor="white";
+        btyellow.style.backgroundColor="gray"; 
+        
+    }
+</script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
